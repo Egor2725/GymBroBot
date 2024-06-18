@@ -39,5 +39,5 @@ poetry add setuptools==1.2.3 --group=dev
 Add local.env file with TOKEN env
 Run main.py file
 ```sh
-python3 main.py
+python3 app/main.py
 '''
