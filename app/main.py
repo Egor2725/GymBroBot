@@ -4,7 +4,7 @@ from config import TOKEN
 
 from aiogram import Bot, Dispatcher
 
-from handlers import train_router, report_router, recommend_router, history_router
+from handlers import train_router, report_router, recommend_router, history_router, common_router
 
 
 async def init():
@@ -23,7 +23,8 @@ async def main():
         train_router,
         history_router,
         recommend_router,
-        report_router
+        report_router,
+        common_router,
     )
     await dp.start_polling(bot)
 

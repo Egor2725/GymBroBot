@@ -1,4 +1,5 @@
 from pydantic import Field
+from datetime import datetime
 
 from .base import Base
 
@@ -51,6 +52,11 @@ class Train(Base):
     user_id: int
     weight: float
     times: int
+    created: datetime = Field(default_factory=datetime.now)
+    updated: datetime = Field(default_factory=datetime.now)
+
+    def __str__(self):
+        return f'{self.exercise_id}, {self.weight}, {self.times}, {self.created.date()}: {self.created.time()}'
 
     @classmethod
     async def get_all_by_user_id(cls, id: int):
