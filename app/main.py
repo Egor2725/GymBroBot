@@ -1,18 +1,20 @@
-import telebot
+import asyncio
+
 from config import TOKEN
 
+from aiogram import Bot, Dispatcher
 
-bot = telebot.TeleBot(TOKEN, parse_mode=None)
-
-
-@bot.message_handler(commands=['start'])
-def start(message):
-	bot.reply_to(message, "What's up bro?)")
+from handlers import router as base_router
 
 
-@bot.message_handler()
-def echo_all(message):
-	bot.send_message(message.chat.id, message.text)
+async def main():
+    bot = Bot(token=TOKEN)
+    dp = Dispatcher()
+    dp.include_routers(
+        base_router,
+    )
+    await dp.start_polling(bot)
 
 
-bot.infinity_polling()
+if __name__ == '__main__':
+    asyncio.run(main())
