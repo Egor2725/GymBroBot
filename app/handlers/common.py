@@ -3,8 +3,8 @@ from aiogram.filters import CommandStart, Command
 
 from aiogram.fsm.context import FSMContext
 
-import app.keyboards as kb
-from app.database.train import User
+import keyboards as kb
+from database.train import User
 
 
 router = Router()
@@ -28,7 +28,7 @@ async def start(message: types.Message, state: FSMContext):
 @router.message(Command('help'))
 async def help_message(message: types.Message):
     # TODO: make help command great!
-    await message.answer(f"Help message with all commands", reply_markup=kb.get_train_type())
+    await message.answer(f"Help message with all commands", reply_markup=kb.main)
 
 
 @router.message()

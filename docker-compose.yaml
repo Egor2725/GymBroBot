@@ -18,5 +18,20 @@ services:
     volumes:
       - mongo_db:/data/db
 
+  app:
+    build:
+      context: .
+      dockerfile: build/Dockerfile
+    command:
+      - python main.py
+    environment:
+      <<: *env
+    # TODO: volumes rewrites copy of local.env file,
+#    volumes:
+#      - "/app:/code"
+
+    depends_on:
+      - mongo
+
 volumes:
   mongo_db:

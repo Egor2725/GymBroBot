@@ -8,7 +8,7 @@ from handlers import train_router, report_router, recommend_router, history_rout
 
 
 async def init():
-    from app.database.data_migration import load_exercise
+    from database.data_migration import load_exercise
     print('start load_exercise')
     await load_exercise()
     print('complete load_exercise')
