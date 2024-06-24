@@ -1,9 +1,9 @@
 
 
-from database.train import Exercise
+from app.database.train import Exercise
 
-from const import TRAIN_TYPE_STRENGTH, TRAIN_TYPE_CARDIO
-from const import PART_BODY, PART_LEG, PART_HAND
+from app.const import TRAIN_TYPE_STRENGTH, TRAIN_TYPE_CARDIO
+from app.const import PART_BODY, PART_LEG, PART_HAND
 
 
 _hand_exercises = ['поднятие на бицепс', 'разгибания на внут. головку трицепса',

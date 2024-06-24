@@ -3,8 +3,8 @@ from aiogram.filters import CommandStart, Command
 
 from aiogram.fsm.context import FSMContext
 
-import keyboards as kb
-from database.train import User
+import app.keyboards as kb
+from app.database.train import User
 
 
 router = Router()

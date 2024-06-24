@@ -1,7 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 
-from config import db
+from app.config import db
 
 
 class Base(BaseModel):

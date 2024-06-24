@@ -7,7 +7,6 @@ x-env: &env
   MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-admin}
   MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-admin}
 
-
 services:
   mongo:
     image: mongo
@@ -21,14 +20,11 @@ services:
   app:
     build:
       context: .
-      dockerfile: build/Dockerfile
-    command:
-      - python main.py
+      dockerfile: docker/Dockerfile
     environment:
       <<: *env
-    # TODO: volumes rewrites copy of local.env file,
-#    volumes:
-#      - "/app:/code"
+    volumes:
+      - "./app:/code/app"
 
     depends_on:
       - mongo

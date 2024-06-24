@@ -2,9 +2,9 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 
 
-from const import TRAIN_TYPE_CARDIO
-from database.train import Exercise
-import keyboards as kb
+from app.const import TRAIN_TYPE_CARDIO
+from app.database.train import Exercise
+import app.keyboards as kb
 
 
 class TrainFSM(StatesGroup):

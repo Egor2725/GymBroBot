@@ -5,7 +5,6 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 
 load_dotenv(dotenv_path=join(dirname(__file__), "..", "local.env"))
-load_dotenv(dotenv_path=join(dirname(__file__), ".", "local.env"))
 
 
 TOKEN = os.getenv("TOKEN")

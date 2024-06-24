@@ -14,8 +14,8 @@ RUN curl -sSL https://install.python-poetry.org | \
 
 COPY local.env /code/
 COPY pyproject.toml poetry.lock* /code/
-COPY /app /code/
+COPY /app /code/app
 
 RUN poetry install --no-dev
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["poetry", "run", "python", "-m", "app.main"]

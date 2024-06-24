@@ -1,14 +1,14 @@
 import asyncio
 
-from config import TOKEN
+from app.config import TOKEN
 
 from aiogram import Bot, Dispatcher
 
-from handlers import train_router, report_router, recommend_router, history_router, common_router
+from app.handlers import train_router, report_router, recommend_router, history_router, common_router
 
 
 async def init():
-    from database.data_migration import load_exercise
+    from app.database.data_migration import load_exercise
     print('start load_exercise')
     await load_exercise()
     print('complete load_exercise')

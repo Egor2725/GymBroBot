@@ -1,7 +1,7 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from const import TRAIN_TYPES
-from const import PARTS
+from app.const import TRAIN_TYPES
+from app.const import PARTS
 
 
 main = InlineKeyboardMarkup(inline_keyboard=[

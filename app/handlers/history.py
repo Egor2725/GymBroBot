@@ -1,6 +1,6 @@
 from aiogram import types, Router, F
 
-from database.train import Train
+from app.database.train import Train
 
 router = Router()
 
