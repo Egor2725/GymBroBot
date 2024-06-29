@@ -28,7 +28,7 @@ async def start(message: types.Message, state: FSMContext):
 @router.message(Command('help'))
 async def help_message(message: types.Message):
     # TODO: make help command great!
-    await message.answer(f"Help message with all commands", reply_markup=kb.get_train_type())
+    await message.answer(f"Help message with all commands", reply_markup=kb.main)
 
 
 @router.message()

@@ -1,10 +1,10 @@
 import asyncio
 
-from config import TOKEN
+from app.config import TOKEN
 
 from aiogram import Bot, Dispatcher
 
-from handlers import train_router, report_router, recommend_router, history_router, common_router
+from app.handlers import train_router, report_router, recommend_router, history_router, common_router
 
 
 async def init():

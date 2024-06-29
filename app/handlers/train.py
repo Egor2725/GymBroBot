@@ -2,12 +2,12 @@ from aiogram import types, Router, F
 
 from aiogram.fsm.context import FSMContext
 
-from app import keyboards as kb
+import app.keyboards as kb
 from app.database.train import Exercise, Train
 
 from app.services.train_fsm import TrainFSMAdapter, resolve_message_and_markup, is_state_complete
 
-from .utils import extract_weight_and_times_from_message
+from app.handlers.utils import extract_weight_and_times_from_message
 
 router = Router()
 

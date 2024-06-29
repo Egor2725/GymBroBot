@@ -7,7 +7,6 @@ x-env: &env
   MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-admin}
   MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-admin}
 
-
 services:
   mongo:
     image: mongo
@@ -17,6 +16,18 @@ services:
       <<: *env
     volumes:
       - mongo_db:/data/db
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      <<: *env
+    volumes:
+      - "./app:/code/app"
+
+    depends_on:
+      - mongo
 
 volumes:
   mongo_db:

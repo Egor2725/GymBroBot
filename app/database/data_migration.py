@@ -1,6 +1,6 @@
 
 
-from app.database.train import Train, Exercise
+from app.database.train import Exercise
 
 from app.const import TRAIN_TYPE_STRENGTH, TRAIN_TYPE_CARDIO
 from app.const import PART_BODY, PART_LEG, PART_HAND
