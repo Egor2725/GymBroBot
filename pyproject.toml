@@ -9,6 +9,8 @@ readme = "README.md"
 python = "3.12.*"
 python-dotenv = "^1.0.1"
 aiogram = "^3.8.0"
+motor = "^3.4.0"
+pydantic = "^2.7.4"
 
 
 [build-system]
