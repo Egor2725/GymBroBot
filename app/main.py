@@ -4,14 +4,27 @@ from config import TOKEN
 
 from aiogram import Bot, Dispatcher
 
-from handlers import router as base_router
+from handlers import train_router, report_router, recommend_router, history_router, common_router
+
+
+async def init():
+    from app.database.data_migration import load_exercise
+    print('start load_exercise')
+    await load_exercise()
+    print('complete load_exercise')
 
 
 async def main():
+    await init()
+
     bot = Bot(token=TOKEN)
     dp = Dispatcher()
     dp.include_routers(
-        base_router,
+        train_router,
+        history_router,
+        recommend_router,
+        report_router,
+        common_router,
     )
     await dp.start_polling(bot)
 
